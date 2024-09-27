@@ -49,11 +49,11 @@ io.on("connection", (socket) => {
   socket.on("join-room", (roomId, userId) => {
     console.log(`User ${userId} joined room ${roomId}`);
     socket.join(roomId);
-    socket.to(roomId).emit("user-connected", userId);
+    socket.to(roomId).emit("user-connected", userId); // Notify others in the room
 
     socket.on("disconnect", () => {
       console.log(`User ${userId} disconnected from room ${roomId}`);
-      socket.to(roomId).emit("user-disconnected", userId);
+      socket.to(roomId).emit("user-disconnected", userId); // Notify others
     });
 
     socket.on("error", (error) => {
