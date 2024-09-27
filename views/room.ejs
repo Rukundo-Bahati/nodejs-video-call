@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>videoChatApp</title>
-    <link rel="stylesheet" href="/styles.css" /> <!-- Corrected the path -->
+    <link rel="stylesheet" href="/styles.css" />
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
     <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
@@ -18,15 +18,13 @@
         <div class="header_back">
           <i class="fas fa-angle-left"></i>
         </div>
-        <h3>Video Chat</h3> <!-- Corrected the closing tag -->
+        <h3>Video Chat</h3>
       </div>
-    </div>  
-    <div class="main">  
+    </div>
+    <div class="main">
       <div class="main_left">
         <div class="videos_group">
-          <div id="video-grid">
-            <!-- Video elements will be added dynamically -->
-          </div>
+          <div id="video-grid"></div>
         </div>
         <div class="options">
           <div class="options_left">
@@ -48,6 +46,6 @@
         </div>
       </div>
     </div>
+    <script src="/script.js"></script> <!-- Client-side JS -->
   </body>
-  <script src="/script.js"></script> <!-- Corrected the path -->
 </html>

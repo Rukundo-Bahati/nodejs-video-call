@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   let myVideoStream;
+
   navigator.mediaDevices
     .getUserMedia({
       audio: true,
@@ -40,10 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   peer.on("open", (id) => {
-    socket.emit("join-room", ROOM_ID, id, user);
+    socket.emit("join-room", ROOM_ID, id);
+    console.log(`Your Peer ID: ${id}`);
   });
 
   const connectToNewUser = (userId, stream) => {
+    console.log("You are calling someone " + userId);
     const call = peer.call(userId, stream);
     const video = document.createElement("video");
     call.on("stream", (userVideoStream) => {
@@ -93,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const inviteButton = document.querySelector("#inviteButton");
   inviteButton.addEventListener("click", () => {
     prompt(
-      "Copy this link and send it to people you want to have video call with",
+      "Copy this link and send it to people you want to have a video call with",
       window.location.href
     );
   });
@@ -108,5 +111,14 @@ document.addEventListener("DOMContentLoaded", () => {
       myVideoElement.remove();
     }
     window.location.href = "https://www.google.com";
+  });
+
+  // Error Handling
+  peer.on("error", (err) => {
+    console.error("PeerJS error:", err);
+  });
+
+  socket.on("error", (error) => {
+    console.error("Socket.IO error:", error);
   });
 });
