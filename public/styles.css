@@ -15,16 +15,24 @@
 
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  height: 8vh;
-  position: relative;
   width: 100%;
   background-color: var(--main-darklg);
 }
 
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .logo > h3 {
   color: var(--main-light);
+}
+
+.logo > p {
+  color: #bbb;
 }
 
 .main {
@@ -163,13 +171,32 @@ video {
 }
 
 .header_back {
-  display: none;
-  position: absolute;
-  font-size: 1.3rem;
-  top: 17px;
-  left: 28px;
-  color: #fff;
+  background: #555;
+  padding: 0.3rem 1rem;
+  border-radius: 5rem;
+  width: 20%;
+  margin: 0.6rem;
 }
+
+.user {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+@media screen and (max-width:500px) {
+  .header_back {
+    width: 80%;
+  }
+}
+
+.user h4 {
+  color: var(--main-light);
+}
+
+.user p {
+  color: #bbb;
+} 
 
 @media (max-width: 700px) {
   .main_right {
