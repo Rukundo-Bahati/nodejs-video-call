@@ -21,19 +21,11 @@
   background-color: var(--main-darklg);
 }
 
-.logo {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
 
 .logo > h3 {
   color: var(--main-light);
 }
 
-.logo > p {
-  color: #bbb;
-}
 
 .main {
   overflow: hidden;
@@ -175,7 +167,16 @@ video {
   padding: 0.3rem 1rem;
   border-radius: 5rem;
   width: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 0.6rem;
+}
+
+.header_back > i {
+  color: var(--main-light);
+  cursor: pointer;
+  font-size: 1.3rem;
 }
 
 .user {

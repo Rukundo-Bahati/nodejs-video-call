@@ -3,8 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const videoGrid = document.getElementById("video-grid");
   const myVideo = document.createElement("video");
   myVideo.muted = true;
+  const userName = document.querySelector(".name")
 
   const user = prompt("Enter your name") || "Anonymous";
+  userName.textContent = user;
 
   let peer = new Peer(undefined, {
     host: "/",
